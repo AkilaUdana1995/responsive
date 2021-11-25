@@ -86,8 +86,8 @@ namespace responsive.login_form_14
                 var authToken = "a5b08bb26a6b3580e8c34afc54cfff80";  //ConfigurationManager.AppSettings["HVwu0Gn5k8lgQezTZmaLK1XkZY37y73E"]; ////"HVwu0Gn5k8lgQezTZmaLK1XkZY37y73E";
                 TwilioClient.Init(accountSid, authToken);  //initialise above accountSid and authToekn
 
-                var to = new PhoneNumber(ConfigurationManager.AppSettings["+18012069555"]); //("+18012069555");
-                var from = new PhoneNumber("+18012069555");
+                var to = new PhoneNumber(ConfigurationManager.AppSettings["+94766641017"]); //("+18012069555");
+                var from = new PhoneNumber("+19165849239");
                 var message = MessageResource.Create(
                    to: TxtMobile.Text.ToString(),      //"+94766641017",
                     from: "+19165849239",

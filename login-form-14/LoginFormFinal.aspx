@@ -27,7 +27,7 @@ function myFunction() {
 </head>
 <body>
 	   <div class="topnav" id="myTopnav" >
-  <a href="#home" class="active">Home Page</a>
+  <a href="https://localhost:44339/defaultform.aspx" class="active">Home Page</a>
   <a href="https://localhost:44339/login-form-14/CovidUpdate.aspx">Announcements</a>
   <a href="#contact">Need Help?</a>
   <%--<div class="dropdown">
@@ -66,8 +66,8 @@ function myFunction() {
 			      		</div>
 								<div class="w-100">
 									<p class="social-media d-flex justify-content-end">
-										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
-										<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+										<a href="https://www.facebook.com/" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+										<a href="https://twitter.com/i/flow/login" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
 									</p>
 								</div>
 			      	</div>
@@ -103,7 +103,7 @@ function myFunction() {
 										</label>
 									</div>
 									<div class="w-50 text-md-right">
-										<a href="#">Forgot Password</a>
+										<a href="https://localhost:44339/dashboard/ForgotPassword.aspx">Forgot Password</a>
 									</div>
 		            </div>
 		          </form>

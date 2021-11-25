@@ -42,7 +42,9 @@
                                 <li><a href="#">About Us</a></li>
                                  <li><a href="#">Site Map </a></li>
                                 <li><a href="https://localhost:44339/Pages/SignUp.aspx">Sign Up</a></li>
+
                                      <li><a href="https://localhost:44339/login-form-14/LoginFormFinal.aspx">Sign In</a></li>
+
                                 <li><a href="#">Contact Us</a></li> <!--these elements are goiung under single class-->
                                 <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
@@ -59,7 +61,9 @@
                                                 <li><a href="#">Scarfs</a></li>
                                                 <li><a href="#">Hats</a></li>
                                         </ul>
-                                                                                                                                 </li>
+                                        <li><a href="https://localhost:44339/dashboard/DashBoard.aspx">Beta Analitics</a></li>
+                             
+                                                                                        
                             </ul>
 
                         </div>
