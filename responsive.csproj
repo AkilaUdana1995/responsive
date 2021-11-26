@@ -672,6 +672,7 @@
     <Content Include="js\signUp.aspx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Pages\SignUp.aspx" />
+    <Content Include="Search Form\afterPayment.aspx" />
     <Content Include="Search Form\css\main.css" />
     <Content Include="Search Form\css\search.css" />
     <Content Include="Search Form\images\Searchs_130.png" />
@@ -778,6 +779,13 @@
     </Compile>
     <Compile Include="Pages\SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search Form\afterPayment.aspx.cs">
+      <DependentUpon>afterPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search Form\afterPayment.aspx.designer.cs">
+      <DependentUpon>afterPayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Search Form\SearchForm.aspx.cs">
       <DependentUpon>SearchForm.aspx</DependentUpon>

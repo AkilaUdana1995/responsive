@@ -38,7 +38,7 @@
 </head>
 
 <body class="animsition">
-      <form action="" method="post" novalidate="novalidate"  runat="server">
+     
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -442,6 +442,7 @@
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
+             <form action="" method="post" novalidate="novalidate"  runat="server">
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
@@ -505,11 +506,12 @@
                                                 </div>--%>
                                             </div>
                                             <div>
-                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
-                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
-                                                    <span id="payment-button-amount">Secure Search</span>
-                                                    <span id="payment-button-sending" style="display:none;">Sending…</span>
-                                                </button>
+<%--                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">--%>
+                                                    <asp:Button ID="btnSearch" runat="server" Text="Serch" class="btn btn-lg btn-info btn-block"/>
+                                                    
+                                                    <%--<span id="payment-button-amount">Secure Search</span>
+                                                    <span id="payment-button-sending" style="display:none;">Sending…</span>--%>
+                                                
                                             </div>
                                       <%--  </form>--%>
                                     </div>
@@ -561,24 +563,96 @@
                             <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Basic Form</strong> Elements
+                                        <strong>New Pet?</strong> (Register here)
                                     </div>
                                     <div class="card-body card-block">
 <%--                                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">--%>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label class=" form-control-label">Static</label>
+                                                    <label class=" form-control-label">Pet Name</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <p class="form-control-static">Username</p>
+<%--                                                    <p class="form-control-static">Please enter your pet name</p>--%>
+                                                    <asp:TextBox ID="TextBox4" runat="server"  class="form-control" aria-required="true" aria-invalid="false" placeholder="Please enter pet name"></asp:TextBox>
+
                                                 </div>
                                             </div>
+
+                                         <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Vaccines Given</label>
+                                                </div>
+                                                <div class="col col-md-9">
+                                                    <div class="form-check-inline form-check">
+                                                        <label for="inline-checkbox1" class="form-check-label ">
+                                                            <asp:CheckBox ID="cbRabies" runat="server" class="form-check-label" />Rabies
+<%--                                                            <input type="checkbox" id="inline-checkbox1" name="inline-checkbox1" value="option1" class="form-check-input">One--%>
+                                                        </label>&nbsp &nbsp
+                                                        <label for="inline-checkbox2" class="form-check-label ">
+<%--                                                            <input type="checkbox" id="inline-checkbox2" name="inline-checkbox2" value="option2" class="form-check-input">Two--%>
+                                                             <asp:CheckBox ID="CbPavo" runat="server" class="form-check-label" />Pavo
+
+                                                        </label>&nbsp &nbsp
+                                                        <label for="inline-checkbox3" class="form-check-label ">
+<%--                                                            <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3" class="form-check-input">Three--%>
+                                                          <asp:CheckBox ID="CbDSV" runat="server" class="form-check-label" />DSV
+
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                         <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Gender</label>
+                                                </div>
+                                                <div class="col col-md-9">
+                                                    <div class="form-check">
+                                                        <div class="radio">
+                                                            <label for="radio1" class="form-check-label ">
+                                                                <asp:RadioButton ID="RbMale" runat="server" class="form-check-input"/>Male
+<%--                                                                <input type="radio" id="radio1" name="radios" value="option1" class="form-check-input">Option 1--%>
+                                                            </label>
+                                                        </div>
+
+                                                         <div class="radio">
+                                                            <label for="radio1" class="form-check-label ">
+                                                                <asp:RadioButton ID="RbFemale" runat="server" class="form-check-input"/>Female
+<%--                                                                <input type="radio" id="radio1" name="radios" value="option1" class="form-check-input">Option 1--%>
+                                                            </label>
+                                                        </div>
+                                                       <%-- <div class="radio">
+                                                            <label for="radio2" class="form-check-label ">
+                                                                <input type="radio" id="radio2" name="radios" value="option2" class="form-check-input">Option 2
+                                                            </label>
+                                                        </div>--%>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                      
+                                   
+                                
+                                           <%-- <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Inline Radios</label>
+                                                </div>--%>
+
+
+
+
+
+
+
+
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="text-input" class=" form-control-label">Text Input</label>
+                                                    <label for="text-input" class=" form-control-label">Date of Birth</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control">
+<%--                                                    <input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control">--%>
+                                                    <asp:Calendar ID="Calendar1" runat="server" class="form-control"></asp:Calendar>
                                                     <small class="form-text text-muted">This is a help text</small>
                                                 </div>
                                             </div>
@@ -587,7 +661,8 @@
                                                     <label for="email-input" class=" form-control-label">Email Input</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control">
+<%--                                                    <input type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control">--%>
+                                                    <asp:TextBox ID="TextBox7" runat="server"  class="form-control" placeholder="Enter your Email"></asp:TextBox>
                                                     <small class="help-block form-text">Please enter your email</small>
                                                 </div>
                                             </div>
@@ -596,24 +671,41 @@
                                                     <label for="password-input" class=" form-control-label">Password</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control">
-                                                    <small class="help-block form-text">Please enter a complex password</small>
+<%--                                                    <input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control">--%>
+                                                    <asp:TextBox ID="TextBox8" runat="server"  class="form-control" placeholder="Enter A-Z; 1-9 No Spaces and (*/-)"></asp:TextBox>
+
+                                                    <small class="help-block form-text">Passwords are case senstitive</small>
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
+
+
+                                         <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="password-input" class=" form-control-label">Confirm Password</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+<%--                                                    <input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control">--%>
+                                     <asp:TextBox ID="TextBox9" runat="server"  class="form-control" placeholder="Confirm Password"></asp:TextBox>
+
+                                                    <small class="help-block form-text">please get correct matching</small>
+                                                </div>
+                                            </div>
+
+
+                                          <%--  <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="disabled-input" class=" form-control-label">Disabled Input</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="text" id="disabled-input" name="disabled-input" placeholder="Disabled" disabled="" class="form-control">
                                                 </div>
-                                            </div>
-                                            <div class="row form-group">
+                                            </div>--%>
+                                          <%--  <div class="row form-group">
                                                 <div class="col col-md-3">
-                                                    <label for="textarea-input" class=" form-control-label">Textarea</label>
+                                                    <label for="textarea-input" class=" form-control-label">Aditional Notes</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea>
+                                                    <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Please mentioned any other note if have" class="form-control"></textarea>
                                                 </div>
                                             </div>
                                             <div class="row form-group">
@@ -689,47 +781,8 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label class=" form-control-label">Radios</label>
-                                                </div>
-                                                <div class="col col-md-9">
-                                                    <div class="form-check">
-                                                        <div class="radio">
-                                                            <label for="radio1" class="form-check-label ">
-                                                                <input type="radio" id="radio1" name="radios" value="option1" class="form-check-input">Option 1
-                                                            </label>
-                                                        </div>
-                                                        <div class="radio">
-                                                            <label for="radio2" class="form-check-label ">
-                                                                <input type="radio" id="radio2" name="radios" value="option2" class="form-check-input">Option 2
-                                                            </label>
-                                                        </div>
-                                                        <div class="radio">
-                                                            <label for="radio3" class="form-check-label ">
-                                                                <input type="radio" id="radio3" name="radios" value="option3" class="form-check-input">Option 3
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label class=" form-control-label">Inline Radios</label>
-                                                </div>
-                                                <div class="col col-md-9">
-                                                    <div class="form-check-inline form-check">
-                                                        <label for="inline-radio1" class="form-check-label ">
-                                                            <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input">One
-                                                        </label>
-                                                        <label for="inline-radio2" class="form-check-label ">
-                                                            <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input">Two
-                                                        </label>
-                                                        <label for="inline-radio3" class="form-check-label ">
-                                                            <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input">Three
-                                                        </label>
-                                                    </div>
-                                                </div>
+                                           
+                                               
                                             </div>
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
@@ -754,25 +807,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label class=" form-control-label">Inline Checkboxes</label>
-                                                </div>
-                                                <div class="col col-md-9">
-                                                    <div class="form-check-inline form-check">
-                                                        <label for="inline-checkbox1" class="form-check-label ">
-                                                            <input type="checkbox" id="inline-checkbox1" name="inline-checkbox1" value="option1" class="form-check-input">One
-                                                        </label>
-                                                        <label for="inline-checkbox2" class="form-check-label ">
-                                                            <input type="checkbox" id="inline-checkbox2" name="inline-checkbox2" value="option2" class="form-check-input">Two
-                                                        </label>
-                                                        <label for="inline-checkbox3" class="form-check-label ">
-                                                            <input type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3" class="form-check-input">Three
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </div>--%>
+                                           
                                             <div class="row form-group">
                                                 <div class="col col-md-3">
                                                     <label for="file-input" class=" form-control-label">File input</label>
@@ -791,6 +827,16 @@
                                             </div>
                                         </form>
                                     </div>
+
+
+                                               <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+<%--                                                    <asp:Button ID="Button1" runat="server" Text="Button" class="btn btn-lg btn-info btn-block"/>--%>
+                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                                    <span id="payment-button-amount">Secure Search</span>
+                                                    <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                                </button>
+                                            </div>
                                   <%--  <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit

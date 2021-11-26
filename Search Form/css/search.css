@@ -118,4 +118,19 @@ nav.sm-menu ul {
 /*BRINGS BACK THE ICONS MENU WHEN INPOUT IS CHECKED*/
 input[type=checkbox]:checked + nav.sm-menu ul {
     left: 0;
-}  
+}
+
+
+.cvb {
+    height: 200px;
+    position: relative;
+    border: 3px solid green;
+}
+
+.cvk {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

@@ -32,8 +32,8 @@ namespace paymentGateway.cardpayment
                 string key = "sk_test_51J7EAKHEUh3A0k5PZxtf9SQ5S73GxObQvo0HUGUDIgTNPQnEDw0ZCU7OpsFIfLqDYqyRGoZzFmioELAWg7kqWhqf00gXx1oLer";
                 var chargeservice = new StripeChargeService(key);
                 StripeCharge currentcharge = chargeservice.Create(mycharge);
-                // Response.Write("Sucsuess");
-                // Response.Redirect("aftercard.aspx");
+                 //Response.Write("Sucsuess");
+                 Response.Redirect("https://localhost:44339/Search%20Form/afterPayment.aspx");
             }
             catch (Exception ex)
             {
