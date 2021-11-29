@@ -764,6 +764,7 @@
     <Compile Include="Models\RecSMSDTO.cs" />
     <Compile Include="Models\RESDTO.cs" />
     <Compile Include="Models\DocDTO.cs" />
+    <Compile Include="Models\ResetPWDDTO.cs" />
     <Compile Include="Models\testDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoginPage.aspx.cs">

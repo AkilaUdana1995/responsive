@@ -49,12 +49,14 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post">
+                            <form action="" method="post" runat="server">
                                 <div class="form-group">
                                     <label>Email Address</label>
                                     <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">submit</button>
+<%--                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">submit</button>--%>
+                                <asp:Button ID="btnPwdReset" runat="server" Text="Submit"  class="au-btn au-btn--block au-btn--green m-b-20" OnClick="btnPwdReset_Click"/>
                             </form>
                         </div>
                     </div>
