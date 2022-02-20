@@ -1,4 +1,5 @@
-﻿
+﻿@modal ResponsiveWebAPI.Models.RESDTO
+
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SendSms.aspx.cs" Inherits="responsive.login_form_14.SendSms" %>
 
 <!DOCTYPE html>
@@ -100,8 +101,14 @@ function myFunction() {
 		            <asp:Button ID="btnSendSms" runat="server" Text="Confirm and Pay" class="form-control btn btn-primary rounded submit px-3" OnClick="btnSendSms_Click"  />
 					</div>
 
-
-		           
+		            <asp:Button ID="btnViewSMS" runat="server" Text="View Reply From Doctor" class="form-control btn btn-primary rounded submit px-3" OnClick="btnViewSMS_Click"  />
+						@using	(Html.BeginForm()) {
+								@Html.TextBox("txtView", @TempData["txtView"])
+								}
+                    <asp:TextBox ID="txtView"  runat="server" placeholder="doctors reply"></asp:TextBox>
+								<%--@Html.TextBoxFor(model => model.UserDefaultDate)--%>
+								@Html.TextBox("txtView", @TempData["txtView"])
+								
 		          </form>
 
 		        </div>

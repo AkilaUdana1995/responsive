@@ -29,18 +29,25 @@ using System.Net.Http;
 using responsive.Global;
 using Newtonsoft.Json;
 using System.Text;
+using ResponsiveWebAPI.Controllers;
 
 namespace responsive.login_form_14
 {
     public partial class SendSms : System.Web.UI.Page
     {
         RESDTO oRESDTO = new RESDTO();
-       // RecSMSDTO oRecSMSDTO = new RecSMSDTO();
-       // SerialPort Sp = new SerialPort();
+        SMSiController oSMSiController = new SMSiController();
+        // RecSMSDTO oRecSMSDTO = new RecSMSDTO();
+        // SerialPort Sp = new SerialPort();
         protected void Page_Load(object sender, EventArgs e)
         {
            
         }
+
+        //public SendSms()
+        //{
+
+        //}
 
         //public void collectData()
         //{
@@ -65,13 +72,23 @@ namespace responsive.login_form_14
 
         //}
 
+        public void GetReply()
+        {
+            //txtMessage.Text= reply;
+
+            txtView.Text = "AAA";
+           // return new View(oRESDTO);
+            // oRESDTO.
+        }
+
         public void collectdatafromUser()
         {
             oRESDTO.EnterSendersNumber = TxtMobile.Text;
             oRESDTO.EnterMessage = txtMessage.Text;
-            sendSms();
+          //  sendSms();
+            sendSMSi();
            // Index();
-          //  receiveSMS();
+           //  receiveSMS();
 
         }
 
@@ -83,14 +100,14 @@ namespace responsive.login_form_14
             {
 
                 var accountSid = "AC7ca440d4e6aed022f0e1199f31642ca6"; /*ConfigurationManager.AppSettings["SK8ddd74506dae46878c4d3cc64876c750"];*/ // "SK8ddd74506dae46878c4d3cc64876c750";
-                var authToken = "a5b08bb26a6b3580e8c34afc54cfff80";  //ConfigurationManager.AppSettings["HVwu0Gn5k8lgQezTZmaLK1XkZY37y73E"]; ////"HVwu0Gn5k8lgQezTZmaLK1XkZY37y73E";
+                var authToken = "999268bb2c92c8776603d4445f67603d";  //ConfigurationManager.AppSettings["HVwu0Gn5k8lgQezTZmaLK1XkZY37y73E"]; ////"HVwu0Gn5k8lgQezTZmaLK1XkZY37y73E";
                 TwilioClient.Init(accountSid, authToken);  //initialise above accountSid and authToekn
 
                 var to = new PhoneNumber(ConfigurationManager.AppSettings["+94766641017"]); //("+18012069555");
-                var from = new PhoneNumber("+19165849239");
+                var from = new PhoneNumber("+17407593256");
                 var message = MessageResource.Create(
-                   to: TxtMobile.Text.ToString(),      //"+94766641017",
-                    from: "+19165849239",
+                   to: new Twilio.Types.PhoneNumber("+94766641017"),     //"+94766641017", //TxtMobile.Text.ToString(),      //"+94766641017",
+                    from: new Twilio.Types.PhoneNumber("+17407593256"), //"+19165849239",
                    body:txtMessage.Text.ToString());
 
                 return message.Sid;
@@ -108,7 +125,7 @@ namespace responsive.login_form_14
            // if()
            collectdatafromUser();
             Response.Write("<script>alert('your Message has sent to Doc!')</script>");
-            Response.Redirect("~/cardpayment/PaymentForm.aspx");
+          //  Response.Redirect("~/cardpayment/PaymentForm.aspx");
             //  receiveSMS();
             //collectData();
         }
@@ -184,6 +201,111 @@ namespace responsive.login_form_14
         //        //  return TwiML(messagingResponse);
         //    }
         //}
+
+
+
+
+        //public String sendSMSi()
+        //{
+        //    try
+        //    {
+
+        //        // Find your Account SID and Auth Token at twilio.com/console
+        //        // and set the environment variables. See http://twil.io/secure
+        //        string accountSid = "AC7ca440d4e6aed022f0e1199f31642ca6";  //Environment.GetEnvironmentVariable("AC7ca440d4e6aed022f0e1199f31642ca6");
+        //        string authToken = "a5b08bb26a6b3580e8c34afc54cfff80";// Environment.GetEnvironmentVariable("a5b08bb26a6b3580e8c34afc54cfff80");
+
+        //        TwilioClient.Init(accountSid, authToken);
+
+        //        var message = MessageResource.Create(
+        //            body: "Hi there",
+        //            from: new Twilio.Types.PhoneNumber("+19165849239"),
+        //            to: new Twilio.Types.PhoneNumber("+94766641017")
+        //        );
+
+        //        return (message.Sid);
+        //    }
+        //    catch (System.Exception ex)
+        //    {
+
+        //        throw ex;
+        //    }
+        //}
+
+        [HttpPost]
+        public string sendSMSi()
+        {
+            try
+            {
+
+                var accountSid = "AC7ca440d4e6aed022f0e1199f31642ca6"; /*ConfigurationManager.AppSettings["SK8ddd74506dae46878c4d3cc64876c750"];*/ // "SK8ddd74506dae46878c4d3cc64876c750";
+                var authToken = "999268bb2c92c8776603d4445f67603d";  //ConfigurationManager.AppSettings["HVwu0Gn5k8lgQezTZmaLK1XkZY37y73E"]; ////"HVwu0Gn5k8lgQezTZmaLK1XkZY37y73E";
+                TwilioClient.Init(accountSid, authToken);  //initialise above accountSid and authToekn
+
+                var to = new PhoneNumber(ConfigurationManager.AppSettings["+94766641017"]); //("+18012069555");
+                var from = new PhoneNumber("+17407593256");
+                var message = MessageResource.Create(
+                   to: new Twilio.Types.PhoneNumber("+94766641017"),     //"+94766641017", //TxtMobile.Text.ToString(),      //"+94766641017",
+                    from: new Twilio.Types.PhoneNumber("+17407593256"), //"+19165849239",
+                   body: txtMessage.Text); //txtMessage.Text.ToString());
+
+               // return Content(message.Body);
+                return message.Body;
+                // Response.Write("<script>alert('please enter value!!!')</script>");
+            }
+            catch (System.Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+        }
+
+        protected void btnViewSMS_Click(object sender, EventArgs e)
+        {
+            // oSMSiController.ReceiveSMS();
+            // txtView.Text=
+            // txtView.Text = oRESDTO.ViewSMS;
+            GetReply();
+            // receiveSMS();
+
+            //ModelState.Remove(txtView.Text);
+
+            //if (!string.IsNullOrEmpty(oRESDTO.ViewSMS))
+            //{
+            //    txtView.Text = oRESDTO.ViewSMS;
+            //}
+            //string script = "<script type=\"text/javascript\">alert('abc');</script>";
+            //ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script);
+        }
+
+
+        private String GetUser()
+        {
+            String results = "";
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(GlobalData.BaseURL);
+                string path = "http://localhost:52096/SMSi/ReceiveSMS";
+
+                // var json = JsonConvert.SerializeObject(oLoginDTO);
+                var content = new StringContent("abc", Encoding.UTF8, "application/json");
+                HttpResponseMessage response = client.GetAsync(path).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    String jsnString = response.Content.ReadAsStringAsync().Result;
+                    results = JsonConvert.DeserializeObject<String>(jsnString);
+                }
+            }
+            return results;
+
+        }
+
+
+
+
+
 
 
     }

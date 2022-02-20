@@ -29,6 +29,8 @@ namespace responsive.Models
         public string EnterPassword { get; set; }
         public string ReEnterPassWord { get; set; }
 
+        public string ViewSMS { get; set; }
+
 
 
 
